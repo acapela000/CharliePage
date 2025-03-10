@@ -11,7 +11,7 @@ import {
 import AtroposCard from "@/components/atropos-card";
 // import ProjectGrid from "@/components/project-grid";
 // import GitHubActivity from "@/components/github-activity";
-// import ProgrammingLanguages from "@/components/programming-languages";
+import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline";
 // import SpokenLanguages from "@/components/spoken-languages";
 // import Certifications from "@/components/certifications";
@@ -120,11 +120,11 @@ import AtroposCard from "@/components/atropos-card";
 //   },
 // ];
 
-// const spokenLanguages = [
-//   { name: "English", proficiency: 5 },
-//   { name: "Japanese", proficiency: 3 },
-//   { name: "Spanish", proficiency: 2 },
-// ];
+const spokenLanguages = [
+  { name: "English", proficiency: 5 },
+  { name: "Japanese", proficiency: 3 },
+  { name: "Spanish", proficiency: 2 },
+];
 
 // const certifications = [
 //   { name: "AWS Certified Developer", issuer: "Associate Level" },
@@ -187,10 +187,10 @@ export default function HomePage() {
         </section> */}
 
         {/* GitHub Activity and Languages */}
-        {/* <section className="mb-12 grid md:grid-cols-2 gap-6">
-          <GitHubActivity />
+        <section className="mb-12 grid md:grid-cols-2 gap-6">
+          {/* <GitHubActivity /> */}
           <ProgrammingLanguages />
-        </section> */}
+        </section>
 
         {/* Timeline Section */}
         {/* <Timeline events={timelineEvents} /> */}
