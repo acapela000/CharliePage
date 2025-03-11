@@ -13,7 +13,7 @@ import AtroposCard from "@/components/atropos-card";
 // import GitHubActivity from "@/components/github-activity";
 // import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline";
-// import SpokenLanguages from "@/components/spoken-languages";
+import SpokenLanguages from "@/components/spoken-languages";
 // import Certifications from "@/components/certifications";
 
 // Sample project data with different sizes for Bento layout
@@ -120,11 +120,11 @@ import AtroposCard from "@/components/atropos-card";
 //   },
 // ];
 
-// const spokenLanguages = [
-//   { name: "English", proficiency: 5 },
-//   { name: "Japanese", proficiency: 3 },
-//   { name: "Spanish", proficiency: 2 },
-// ];
+const spokenLanguages = [
+  { name: "English", proficiency: 5 },
+  { name: "Japanese", proficiency: 3 },
+  { name: "Spanish", proficiency: 2 },
+];
 
 // const certifications = [
 //   { name: "AWS Certified Developer", issuer: "Associate Level" },
@@ -196,10 +196,10 @@ export default function HomePage() {
         {/* <Timeline events={timelineEvents} /> */}
 
         {/* Languages & Skills Section */}
-        {/* <section className="grid md:grid-cols-2 gap-6">
+        <section className="grid md:grid-cols-2 gap-6">
           <SpokenLanguages languages={spokenLanguages} />
-          <Certifications certifications={certifications} />
-        </section> */}
+          {/* <Certifications certifications={certifications} /> */}
+        </section>
       </main>
 
       <footer className="border-t py-6 md:py-8 mt-12">
