@@ -193,19 +193,19 @@ export default function HomePage() {
         </section>
 
         {/* GitHub Activity and Languages */}
-        {/* <section className="mb-12 grid md:grid-cols-2 gap-6">
-          <GitHubActivity />
+        <section className="mb-12 grid md:grid-cols-2 gap-6">
+          {/* <GitHubActivity /> */}
           <ProgrammingLanguages />
-        </section> */}
+        </section>
 
         {/* Timeline Section */}
         {/* <Timeline events={timelineEvents} /> */}
 
         {/* Languages & Skills Section */}
-        {/* <section className="grid md:grid-cols-2 gap-6">
+        <section className="grid md:grid-cols-2 gap-6">
           <SpokenLanguages languages={spokenLanguages} />
-          <Certifications certifications={certifications} />
-        </section> */}
+          {/* <Certifications certifications={certifications} /> */}
+        </section>
       </main>
 
       <footer className="border-t py-6 md:py-8 mt-12">
