@@ -13,8 +13,8 @@ import AtroposCard from "@/components/atropos-card";
 // import GitHubActivity from "@/components/github-activity";
 import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline";
-// import SpokenLanguages from "@/components/spoken-languages";
-import Certifications from "@/components/certifications";
+import SpokenLanguages from "@/components/spoken-languages";
+// import Certifications from "@/components/certifications";
 
 // Sample project data with different sizes for Bento layout
 // const projects = [
@@ -197,8 +197,8 @@ export default function HomePage() {
 
         {/* Languages & Skills Section */}
         <section className="grid md:grid-cols-2 gap-6">
-          {/* <SpokenLanguages languages={spokenLanguages} /> */}
-          <Certifications certifications={certifications} />
+          <SpokenLanguages languages={spokenLanguages} />
+          {/* <Certifications certifications={certifications} /> */}
         </section>
       </main>
 
