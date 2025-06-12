@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import AtroposCard from "@/components/atropos-card";
 import ProjectGrid from "@/components/project-grid";
-// import GitHubActivity from "@/components/github-activity"
+import GitHubActivity from "@/components/github-activity"
 import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline"
 import SpokenLanguages from "@/components/spoken-languages";
@@ -194,8 +194,8 @@ export default function HomePage() {
 
         {/* GitHub Activity and Languages */}
         <section className="mb-12 grid md:grid-cols-2 gap-6">
-          {/* <GitHubActivity /> */}
-          <ProgrammingLanguages />
+          <GitHubActivity />
+          {/* <ProgrammingLanguages /> */}
         </section>
 
         {/* Timeline Section */}
