@@ -51,10 +51,10 @@ export default function AtroposCard() {
                   data-atropos-offset="0"
                 >
                   <Image
-                    src="/placeholder.svg?height=300&width=300"
+                    src="/Thao-winter-gif.gif"
                     alt="Profile picture"
-                    width={300}
-                    height={300}
+                    width={400}
+                    height={350}
                     className="object-cover"
                     data-atropos-offset="-5"
                     priority
