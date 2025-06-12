@@ -9,12 +9,12 @@ import {
   User,
 } from "lucide-react";
 import AtroposCard from "@/components/atropos-card";
-// import ProjectGrid from "@/components/project-grid";
-import GitHubActivity from "@/components/github-activity";
-// import ProgrammingLanguages from "@/components/programming-languages";
-// import Timeline from "@/components/timeline";
-// import SpokenLanguages from "@/components/spoken-languages";
-// import Certifications from "@/components/certifications";
+import ProjectGrid from "@/components/project-grid";
+import GitHubActivity from "@/components/github-activity"
+import ProgrammingLanguages from "@/components/programming-languages";
+// import Timeline from "@/components/timeline"
+import SpokenLanguages from "@/components/spoken-languages";
+import Certifications from "@/components/certifications";
 
 // Updated project data with Bento.js colors
 const projects = [
@@ -126,17 +126,17 @@ const projects = [
 //   },
 // ]
 
-// const spokenLanguages = [
-//   { name: "English", proficiency: 5 },
-//   { name: "Japanese", proficiency: 3 },
-//   { name: "Spanish", proficiency: 2 },
-// ]
+const spokenLanguages = [
+  { name: "English", proficiency: 5 },
+  { name: "Japanese", proficiency: 3 },
+  { name: "Spanish", proficiency: 2 },
+];
 
-// const certifications = [
-//   { name: "AWS Certified Developer", issuer: "Associate Level" },
-//   { name: "React Developer Certification", issuer: "Meta Front-End Developer" },
-//   { name: "JLPT N2", issuer: "Japanese Language Proficiency Test" },
-// ]
+const certifications = [
+  { name: "AWS Certified Developer", issuer: "Associate Level" },
+  { name: "React Developer Certification", issuer: "Meta Front-End Developer" },
+  { name: "JLPT N2", issuer: "Japanese Language Proficiency Test" },
+];
 
 export default function HomePage() {
   return (
@@ -204,7 +204,7 @@ export default function HomePage() {
         {/* Languages & Skills Section */}
         <section className="grid md:grid-cols-2 gap-6">
           <SpokenLanguages languages={spokenLanguages} />
-          {/* <Certifications certifications={certifications} /> */}
+          <Certifications certifications={certifications} />
         </section>
       </main>
 
