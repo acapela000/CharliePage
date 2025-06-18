@@ -42,7 +42,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
