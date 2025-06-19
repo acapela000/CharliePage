@@ -9,6 +9,7 @@ export const metadata = {
   title: "Charlie Junior | Software Developer",
   description:
     "Personal portfolio of Charlie Junior, a software developer specializing in React and modern web technologies.",
+  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "Charlie Junior | Software Developer",
     description:
@@ -42,7 +43,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <main className="min-h-screen w-full px-2 sm:px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             {children}
           </main>
         </ThemeProvider>
