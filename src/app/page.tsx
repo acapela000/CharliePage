@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import AtroposCard from "@/components/atropos-card";
 import ProjectGrid from "@/components/project-grid";
-import GitHubActivity from "@/components/github-activity"
+import GitHubActivity from "@/components/github-activity";
 import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline"
 import SpokenLanguages from "@/components/spoken-languages";
@@ -142,37 +142,49 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Bar */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed px-6 md:px-28 top-0 left-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
               <Building2 className="h-5 w-5" />
-              <span className="font-bold">Home</span>
+              <span className="font-medium hidden md:inline md:text-blue-400">
+                Home
+              </span>
             </Link>
             <Link
               href="https://linkedin.com"
               className="flex items-center gap-2"
             >
               <Linkedin className="h-5 w-5" />
-              <span className="font-medium">LinkedIn</span>
+              <span className="font-medium hidden md:block md:text-blue-400">
+                LinkedIn
+              </span>
             </Link>
             <Link href="https://github.com" className="flex items-center gap-2">
               <Github className="h-5 w-5" />
-              <span className="font-medium">GitHub</span>
+              <span className="font-medium hidden md:block md:text-blue-400">
+                GitHub
+              </span>
             </Link>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/about" className="flex items-center gap-2">
               <User className="h-5 w-5" />
-              <span className="font-medium">About</span>
+              <span className="font-medium hidden md:block md:text-blue-400">
+                About
+              </span>
             </Link>
-            <Link href="/newsletter" className="flex items-center gap-2">
+            <Link href="/blogs" className="flex items-center gap-2">
               <MessageSquare className="h-5 w-5" />
-              <span className="font-medium">Newsletter</span>
+              <span className="font-medium hidden md:block md:text-blue-400">
+                Blogs
+              </span>
             </Link>
             <Link href="/contact" className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
-              <span className="font-medium">Contact</span>
+              <span className="font-medium hidden md:block md:text-blue-400">
+                Contact
+              </span>
             </Link>
           </div>
         </div>
@@ -180,7 +192,7 @@ export default function HomePage() {
 
       <main className="container py-6 md:py-12">
         {/* Hero Section with Centered Atropos Card */}
-        <section className="flex justify-center mb-12">
+        <section className="flex justify-center mt-16 mb-12">
           <div className="w-full max-w-md">
             <AtroposCard />
           </div>
