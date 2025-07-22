@@ -138,7 +138,65 @@ const certifications = [
   { name: "JLPT N2", issuer: "Japanese Language Proficiency Test" },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Fetch GitHub activity data
+  const githubResponse = await fetch(
+    "https://api.github.com/users/acapela000/repos?sort=updated&per_page=10",
+    {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!githubResponse.ok) {
+    throw new Error("Failed to fetch GitHub data");
+  }
+
+  const githubData = await githubResponse.json();
+
+  // Fix repository mapping
+  const recentRepos = githubData.map((repo: any) => ({
+    id: repo.id,
+    name: repo.name,
+    description: repo.description,
+    html_url: repo.html_url, // Correct property name
+    updated_at: repo.updated_at, // Keep original format
+    stargazers_count: repo.stargazers_count,
+    forks_count: repo.forks_count,
+    language: repo.language,
+  }));
+
+  // Fix commits fetching
+  const recentCommits = await Promise.all(
+    recentRepos.slice(0, 5).map(async (repo: { name: string }) => {
+      try {
+        const commitsResponse = await fetch(
+          `https://api.github.com/repos/acapela000/${repo.name}/commits?per_page=5&author=acapela000`,
+          {
+            headers: {
+              Accept: "application/vnd.github.v3+json",
+              Authorization: `token ${process.env.GITHUB_TOKEN}`,
+            },
+          }
+        );
+        if (!commitsResponse.ok) return [];
+        const commits = await commitsResponse.json();
+        return commits.map((commit: any) => ({
+          ...commit,
+          repository: { name: repo.name },
+        }));
+      } catch (error) {
+        console.error(`Error fetching commits for ${repo.name}:`, error);
+        return [];
+      }
+    })
+  );
+
+  const commits = recentCommits.flat();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Bar */}
@@ -206,7 +264,10 @@ export default function HomePage() {
 
         {/* GitHub Activity and Languages */}
         <section className="mb-12 grid md:grid-cols-2 gap-6">
-          <GitHubActivity />
+          <GitHubActivity
+            recentRepos={recentRepos}
+            recentCommits={commits} // Use real commits instead of mockCommits
+          />
           {/* <ProgrammingLanguages /> */}
         </section>
 
@@ -254,3 +315,7 @@ export default function HomePage() {
     </div>
   );
 }
+export const metadata = {
+  title: "Charlie Junior's Portfolio",
+  description: "A showcase of my projects and skills as a web developer.",
+};
