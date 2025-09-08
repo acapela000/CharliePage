@@ -11,7 +11,6 @@ import {
 import AtroposCard from "@/components/atropos-card";
 import ProjectGrid from "@/components/project-grid";
 import GitHubActivity from "@/components/github-activity";
-import ProgrammingLanguages from "@/components/programming-languages";
 // import Timeline from "@/components/timeline"
 import SpokenLanguages from "@/components/spoken-languages";
 import Certifications from "@/components/certifications";
@@ -266,7 +265,7 @@ export default async function HomePage() {
             recentRepos={recentRepos}
             recentCommits={commits} // Use real commits instead of mockCommits
           />
-          <ProgrammingLanguages />
+          {/* <ProgrammingLanguages /> */}
         </section>
 
         {/* Timeline Section */}
