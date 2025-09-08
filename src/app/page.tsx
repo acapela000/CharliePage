@@ -20,26 +20,24 @@ import Certifications from "@/components/certifications";
 const projects = [
   {
     id: "1",
-    title: "E-commerce Platform",
-    description:
-      "A full-featured online store with cart and checkout functionality.",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React", "Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
-    demoUrl: "https://demo.example.com",
-    githubUrl: "https://github.com/example/project",
-    size: "large",
+    title: "Project One",
+    description: "Description for project one.",
+    image: "/images/project-one.jpg",
+    technologies: ["React", "TypeScript", "TailwindCSS"],
+    demoUrl: "https://example.com/demo1",
+    githubUrl: "https://github.com/example/project-one",
+    size: "large", // Ensure this matches "small" | "medium" | "large" | "wide"
     featured: true,
-    color: "#e56b4d", // Coral
+    color: "#FF5733",
   },
   {
     id: "2",
-    title: "Task Management App",
-    description:
-      "Organize and track your daily tasks with this intuitive task management application.",
-    image: "/placeholder.svg?height=300&width=400",
-    technologies: ["React", "Redux", "Firebase"],
-    size: "medium",
-    color: "#2a7d8b", // Teal
+    title: "Project Two",
+    description: "Description for project two.",
+    image: "/images/project-two.jpg",
+    technologies: ["Next.js", "Node.js", "CSS"],
+    size: "medium", // Ensure this matches "small" | "medium" | "large" | "wide"
+    color: "#33FF57",
   },
   {
     id: "3",
@@ -48,7 +46,7 @@ const projects = [
       "Real-time weather information and forecasts using OpenWeather API.",
     image: "/placeholder.svg?height=200&width=200",
     technologies: ["React", "OpenWeather API"],
-    size: "small",
+    size: "small" as "small",
     color: "#f3ca40", // Yellow
   },
   {
@@ -57,7 +55,7 @@ const projects = [
     description: "Personal portfolio showcasing my work and skills.",
     image: "/placeholder.svg?height=400&width=600",
     technologies: ["React", "Tailwind", "Framer Motion"],
-    size: "wide",
+    size: "wide" as "wide",
     color: "#173e48", // Dark teal
   },
   {
@@ -98,33 +96,33 @@ const projects = [
   },
 ];
 
-// const timelineEvents = [
-//   {
-//     date: "2023/11",
-//     title: "Started Learning React",
-//     description: "Began my journey with React and modern JavaScript frameworks.",
-//   },
-//   {
-//     date: "2024/1",
-//     title: "First Client Project",
-//     description: "Completed my first paid project for a local business.",
-//   },
-//   {
-//     date: "2024/5",
-//     title: "Joined Tech Startup",
-//     description: "Started working as a junior developer at a tech startup.",
-//   },
-//   {
-//     date: "2024/9",
-//     title: "Launched Personal Project",
-//     description: "Released my first major personal project to the public.",
-//   },
-//   {
-//     date: "2024/12",
-//     title: "Achieved Senior Role",
-//     description: "Promoted to senior developer position after demonstrating expertise.",
-//   },
-// ]
+const timelineEvents = [
+  {
+    date: "2023/11",
+    title: "Started Learning React",
+    description: "Began my journey with React and modern JavaScript frameworks.",
+  },
+  {
+    date: "2024/1",
+    title: "First Client Project",
+    description: "Completed my first paid project for a local business.",
+  },
+  {
+    date: "2024/5",
+    title: "Joined Tech Startup",
+    description: "Started working as a junior developer at a tech startup.",
+  },
+  {
+    date: "2024/9",
+    title: "Launched Personal Project",
+    description: "Released my first major personal project to the public.",
+  },
+  {
+    date: "2024/12",
+    title: "Achieved Senior Role",
+    description: "Promoted to senior developer position after demonstrating expertise.",
+  },
+]
 
 const spokenLanguages = [
   { name: "English", proficiency: 5 },
@@ -268,7 +266,7 @@ export default async function HomePage() {
             recentRepos={recentRepos}
             recentCommits={commits} // Use real commits instead of mockCommits
           />
-          {/* <ProgrammingLanguages /> */}
+          <ProgrammingLanguages />
         </section>
 
         {/* Timeline Section */}
