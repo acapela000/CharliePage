@@ -101,7 +101,7 @@ export default function GitHubActivity({
                   repos.slice(0, 4).map(
                     (
                       repo,
-                      index // Limit to 4 repos
+                      index, // Limit to 4 repos
                     ) => (
                       <div
                         key={repo.id || index}
@@ -145,7 +145,7 @@ export default function GitHubActivity({
                           </span>
                         </div>
                       </div>
-                    )
+                    ),
                   )
                 ) : (
                   <p className="text-muted-foreground text-sm">
@@ -165,7 +165,7 @@ export default function GitHubActivity({
                   commits.slice(0, 5).map(
                     (
                       commit,
-                      index // Limit to 5 commits
+                      index, // Limit to 5 commits
                     ) => (
                       <div
                         key={commit.sha || index}
@@ -186,7 +186,7 @@ export default function GitHubActivity({
                           <span>{formatDate(getCommitDate(commit))}</span>
                         </div>
                       </div>
-                    )
+                    ),
                   )
                 ) : (
                   <p className="text-muted-foreground text-sm">

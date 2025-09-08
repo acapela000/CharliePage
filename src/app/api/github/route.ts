@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const data = await getGitHubActivity(
       "acapela000",
-      process.env.GITHUB_TOKEN
+      process.env.GITHUB_TOKEN,
     );
 
     return NextResponse.json(data, {
@@ -18,7 +18,7 @@ export async function GET() {
     console.error("GitHub API error:", error);
     return NextResponse.json(
       { error: "Failed to fetch GitHub data" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

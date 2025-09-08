@@ -40,7 +40,7 @@ export async function getGitHubActivity(username: string, token?: string) {
           Authorization: `token ${token}`,
         },
         next: { revalidate: 3600 }, // Cache for 1 hour
-      }
+      },
     );
 
     if (!reposResponse.ok) {
@@ -60,7 +60,7 @@ export async function getGitHubActivity(username: string, token?: string) {
               // 'Authorization': `token ${process.env.GITHUB_TOKEN}`,
             },
             next: { revalidate: 3600 },
-          }
+          },
         );
 
         if (!commitsResponse.ok) {
@@ -88,7 +88,7 @@ export async function getGitHubActivity(username: string, token?: string) {
     allCommits.sort(
       (a, b) =>
         new Date(b.commit.author.date).getTime() -
-        new Date(a.commit.author.date).getTime()
+        new Date(a.commit.author.date).getTime(),
     );
 
     return {

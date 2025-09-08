@@ -14,9 +14,10 @@ import GitHubActivity from "@/components/github-activity";
 // import Timeline from "@/components/timeline"
 import SpokenLanguages from "@/components/spoken-languages";
 import Certifications from "@/components/certifications";
+import { Project } from "@/components/project-grid";
 
 // Updated project data with Bento.js colors
-const projects = [
+const projects: Project[] = [
   {
     id: "1",
     title: "Project One",
@@ -45,7 +46,7 @@ const projects = [
       "Real-time weather information and forecasts using OpenWeather API.",
     image: "/placeholder.svg?height=200&width=200",
     technologies: ["React", "OpenWeather API"],
-    size: "small" as "small",
+    size: "small",
     color: "#f3ca40", // Yellow
   },
   {
@@ -54,7 +55,7 @@ const projects = [
     description: "Personal portfolio showcasing my work and skills.",
     image: "/placeholder.svg?height=400&width=600",
     technologies: ["React", "Tailwind", "Framer Motion"],
-    size: "wide" as "wide",
+    size: "wide",
     color: "#173e48", // Dark teal
   },
   {
@@ -99,7 +100,8 @@ const timelineEvents = [
   {
     date: "2023/11",
     title: "Started Learning React",
-    description: "Began my journey with React and modern JavaScript frameworks.",
+    description:
+      "Began my journey with React and modern JavaScript frameworks.",
   },
   {
     date: "2024/1",
@@ -119,9 +121,10 @@ const timelineEvents = [
   {
     date: "2024/12",
     title: "Achieved Senior Role",
-    description: "Promoted to senior developer position after demonstrating expertise.",
+    description:
+      "Promoted to senior developer position after demonstrating expertise.",
   },
-]
+];
 
 const spokenLanguages = [
   { name: "English", proficiency: 5 },
@@ -145,7 +148,7 @@ export default async function HomePage() {
         Authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
       next: { revalidate: 3600 },
-    }
+    },
   );
 
   if (!githubResponse.ok) {
@@ -177,7 +180,7 @@ export default async function HomePage() {
               Accept: "application/vnd.github.v3+json",
               Authorization: `token ${process.env.GITHUB_TOKEN}`,
             },
-          }
+          },
         );
         if (!commitsResponse.ok) return [];
         const commits = await commitsResponse.json();
@@ -189,7 +192,7 @@ export default async function HomePage() {
         console.error(`Error fetching commits for ${repo.name}:`, error);
         return [];
       }
-    })
+    }),
   );
 
   const commits = recentCommits.flat();
