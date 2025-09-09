@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface Project {
+export interface Project {
   id: string;
   title: string;
   description: string;
@@ -47,7 +47,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
                 "bento-item-wide": project.size === "wide",
                 "bento-item-medium": project.size === "medium",
                 "bento-item-small": project.size === "small",
-              }
+              },
             )}
             onClick={() => setSelectedProject(project)}
             style={{ backgroundColor: project.color }}

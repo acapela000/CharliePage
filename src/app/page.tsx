@@ -10,13 +10,15 @@ import {
 } from "lucide-react";
 import AtroposCard from "@/components/atropos-card";
 import ProjectGrid from "@/components/project-grid";
-import GitHubActivity from "@/components/github-activity";
-// import Timeline from "@/components/timeline"
+import GitHubActivityClient from "@/components/github-activity-client";
 import SpokenLanguages from "@/components/spoken-languages";
 import Certifications from "@/components/certifications";
+import { Project } from "@/components/project-grid";
 
+
+export const dynamic = "force-dynamic";
 // Updated project data with Bento.js colors
-const projects = [
+const projects: Project[] = [
   {
     id: "1",
     title: "Project One",
@@ -45,7 +47,7 @@ const projects = [
       "Real-time weather information and forecasts using OpenWeather API.",
     image: "/placeholder.svg?height=200&width=200",
     technologies: ["React", "OpenWeather API"],
-    size: "small" as "small",
+    size: "small",
     color: "#f3ca40", // Yellow
   },
   {
@@ -54,7 +56,7 @@ const projects = [
     description: "Personal portfolio showcasing my work and skills.",
     image: "/placeholder.svg?height=400&width=600",
     technologies: ["React", "Tailwind", "Framer Motion"],
-    size: "wide" as "wide",
+    size: "wide",
     color: "#173e48", // Dark teal
   },
   {
@@ -95,105 +97,21 @@ const projects = [
   },
 ];
 
-const timelineEvents = [
-  {
-    date: "2023/11",
-    title: "Started Learning React",
-    description: "Began my journey with React and modern JavaScript frameworks.",
-  },
-  {
-    date: "2024/1",
-    title: "First Client Project",
-    description: "Completed my first paid project for a local business.",
-  },
-  {
-    date: "2024/5",
-    title: "Joined Tech Startup",
-    description: "Started working as a junior developer at a tech startup.",
-  },
-  {
-    date: "2024/9",
-    title: "Launched Personal Project",
-    description: "Released my first major personal project to the public.",
-  },
-  {
-    date: "2024/12",
-    title: "Achieved Senior Role",
-    description: "Promoted to senior developer position after demonstrating expertise.",
-  },
-]
-
 const spokenLanguages = [
-  { name: "English", proficiency: 5 },
-  { name: "Japanese", proficiency: 3 },
-  { name: "Spanish", proficiency: 2 },
+  { name: "English", proficiency: 4 },
+  { name: "Japanese", proficiency: 4 },
+  { name: "Spanish", proficiency: 1 },
+  { name: "Chinese", proficiency: 1 },
+  { name: "Vietnamese", proficiency: 5 },
 ];
 
 const certifications = [
   { name: "AWS Certified Developer", issuer: "Associate Level" },
   { name: "React Developer Certification", issuer: "Meta Front-End Developer" },
-  { name: "JLPT N2", issuer: "Japanese Language Proficiency Test" },
+  { name: "JLPT N1", issuer: "Japanese Language Proficiency Test" },
 ];
 
-export default async function HomePage() {
-  // Fetch GitHub activity data
-  const githubResponse = await fetch(
-    "https://api.github.com/users/acapela000/repos?sort=updated&per_page=10",
-    {
-      headers: {
-        Accept: "application/vnd.github.v3+json",
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
-      },
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!githubResponse.ok) {
-    throw new Error("Failed to fetch GitHub data");
-  }
-
-  const githubData = await githubResponse.json();
-
-  // Fix repository mapping
-  const recentRepos = githubData.map((repo: any) => ({
-    id: repo.id,
-    name: repo.name,
-    description: repo.description,
-    html_url: repo.html_url, // Correct property name
-    updated_at: repo.updated_at, // Keep original format
-    stargazers_count: repo.stargazers_count,
-    forks_count: repo.forks_count,
-    language: repo.language,
-  }));
-
-  // Fix commits fetching
-  const recentCommits = await Promise.all(
-    recentRepos.slice(0, 5).map(async (repo: { name: string }) => {
-      try {
-        const commitsResponse = await fetch(
-          `https://api.github.com/repos/acapela000/${repo.name}/commits?per_page=5&author=acapela000`,
-          {
-            headers: {
-              Accept: "application/vnd.github.v3+json",
-              Authorization: `token ${process.env.GITHUB_TOKEN}`,
-            },
-          }
-        );
-        if (!commitsResponse.ok) return [];
-        const commits = await commitsResponse.json();
-        return commits.map((commit: any) => ({
-          ...commit,
-          repository: { name: repo.name },
-        }));
-      } catch (error) {
-        console.error(`Error fetching commits for ${repo.name}:`, error);
-        return [];
-      }
-    })
-  );
-
-  const commits = recentCommits.flat();
-
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Bar */}
@@ -261,15 +179,9 @@ export default async function HomePage() {
 
         {/* GitHub Activity and Languages */}
         <section className="mb-12 grid md:grid-cols-2 gap-6">
-          <GitHubActivity
-            recentRepos={recentRepos}
-            recentCommits={commits} // Use real commits instead of mockCommits
-          />
+          <GitHubActivityClient />
           {/* <ProgrammingLanguages /> */}
         </section>
-
-        {/* Timeline Section */}
-        {/* <Timeline events={timelineEvents} /> */}
 
         {/* Languages & Skills Section */}
         <section className="grid md:grid-cols-2 gap-6">
@@ -281,7 +193,7 @@ export default async function HomePage() {
       <footer className="border-t py-6 md:py-8 mt-12">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-center text-sm text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Charlie Junior. All rights
+            &copy; {new Date().getFullYear()} Charlie Truong. All rights
             reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -312,7 +224,8 @@ export default async function HomePage() {
     </div>
   );
 }
+
 export const metadata = {
-  title: "Charlie Junior's Portfolio",
-  description: "A showcase of my projects and skills as a web developer.",
+  title: "Charlie Truong's Portfolio",
+  description: "A showcase of my projects and skills as a fullstack developer.",
 };

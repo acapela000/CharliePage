@@ -43,7 +43,7 @@ export default function AtroposCard() {
           <div className="atropos-inner">
             <Card className="w-full h-full border-2">
               <CardHeader>
-                <CardTitle data-atropos-offset="5">We/Octopus</CardTitle>
+                <CardTitle data-atropos-offset="5">Charlie Thao</CardTitle>
               </CardHeader>
               <CardContent className="grid gap-4">
                 <div
@@ -62,7 +62,7 @@ export default function AtroposCard() {
                 </div>
                 <div>
                   <h3 className="font-semibold" data-atropos-offset="3">
-                    Charlie Junior
+                    Charlie Truong
                   </h3>
                   <p
                     className="text-sm text-muted-foreground mt-1"
@@ -75,7 +75,7 @@ export default function AtroposCard() {
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline">Photography</Badge>
                       <Badge variant="outline">Hiking</Badge>
-                      <Badge variant="outline">Gaming</Badge>
+                      <Badge variant="outline">Running</Badge>
                     </div>
                   </div>
                 </div>
