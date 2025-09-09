@@ -120,22 +120,24 @@ const timelineEvents = [
   },
   {
     date: "2024/12",
-    title: "Achieved Senior Role",
+    title: "Achieved Fullstack developer Role",
     description:
-      "Promoted to senior developer position after demonstrating expertise.",
+      "Promoted to Fullstack developer position after demonstrating expertise.",
   },
 ];
 
 const spokenLanguages = [
-  { name: "English", proficiency: 5 },
-  { name: "Japanese", proficiency: 3 },
-  { name: "Spanish", proficiency: 2 },
+  { name: "English", proficiency: 4 },
+  { name: "Japanese", proficiency: 4 },
+  { name: "Spanish", proficiency: 1 },
+  { name: "Chinese", proficiency: 1 },
+  { name: "Vietnamese", proficiency: 5 },
 ];
 
 const certifications = [
   { name: "AWS Certified Developer", issuer: "Associate Level" },
   { name: "React Developer Certification", issuer: "Meta Front-End Developer" },
-  { name: "JLPT N2", issuer: "Japanese Language Proficiency Test" },
+  { name: "JLPT N1", issuer: "Japanese Language Proficiency Test" },
 ];
 
 export default async function HomePage() {
@@ -284,7 +286,7 @@ export default async function HomePage() {
       <footer className="border-t py-6 md:py-8 mt-12">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-center text-sm text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Charlie Junior. All rights
+            &copy; {new Date().getFullYear()} Charlie Truong. All rights
             reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -316,6 +318,6 @@ export default async function HomePage() {
   );
 }
 export const metadata = {
-  title: "Charlie Junior's Portfolio",
-  description: "A showcase of my projects and skills as a web developer.",
+  title: "Charlie Truong's Portfolio",
+  description: "A showcase of my projects and skills as a fullstack developer.",
 };
