@@ -34,7 +34,7 @@ export default function AboutPage() {
                   <AvatarFallback>CJ</AvatarFallback>
                 </Avatar>
               </div>
-              <CardTitle className="text-2xl">Charlie Junior</CardTitle>
+              <CardTitle className="text-2xl">Charlie Thao</CardTitle>
               <CardDescription>Software Developer</CardDescription>
             </CardHeader>
             <CardContent>
@@ -44,13 +44,13 @@ export default function AboutPage() {
                     <span className="text-sm text-muted-foreground">
                       Location
                     </span>
-                    <span className="font-medium">San Francisco, CA</span>
+                    <span className="font-medium">Osaka, Japan</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm text-muted-foreground">
                       Experience
                     </span>
-                    <span className="font-medium">5+ Years</span>
+                    <span className="font-medium">3+ Years</span>
                   </div>
                 </div>
 
@@ -100,21 +100,20 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold mb-4">About Me</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm Charlie Junior, a passionate software developer with
-                  expertise in building modern web applications. I specialize in
-                  React, Next.js, and TypeScript, creating responsive and
-                  user-friendly interfaces.
+                Full-stack engineer with 3+years’ experience in TypeScript/React/Next.js, specializing in AI-powered web applications.
+                Awarded Best Employee at FPT and multiple hackathon prizes, with proven ability to deliver scalable, production-ready solutions on AWS.
+                Experienced in cross-cultural teamwork in Japan.
                 </p>
                 <p>
-                  With over 5 years of experience in the industry, I've worked
-                  on a variety of projects ranging from e-commerce platforms to
-                  content management systems and social media applications.
+                  With over 3 years of experience in the industry, I've worked
+                  on a variety of projects ranging from AI-powered platforms to
+                  content management systems and etc.
                 </p>
                 <p>
                   My approach to development focuses on writing clean,
                   maintainable code and creating intuitive user experiences. I'm
                   constantly learning and exploring new technologies to stay at
-                  the forefront of web development.
+                  the forefront of AI-powered web app development.
                 </p>
               </div>
             </TabsContent>
@@ -123,10 +122,10 @@ export default function AboutPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-semibold">
-                    Senior Frontend Developer
+                    Fullstack Developer
                   </h3>
                   <p className="text-muted-foreground">
-                    TechCorp Inc. • 2022 - Present
+                    FPT Software Company. • 2023 - Present
                   </p>
                   <ul className="list-disc list-inside mt-2 text-muted-foreground">
                     <li>
@@ -137,15 +136,12 @@ export default function AboutPage() {
                       Implemented CI/CD pipelines to streamline the deployment
                       process
                     </li>
-                    <li>
-                      Mentored junior developers and conducted code reviews
-                    </li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Frontend Developer</h3>
+                  <h3 className="text-lg font-semibold">Fullstach Developer</h3>
                   <p className="text-muted-foreground">
-                    WebSolutions • 2019 - 2022
+                    Mockdata • 2019 - 2022
                   </p>
                   <ul className="list-disc list-inside mt-2 text-muted-foreground">
                     <li>
@@ -169,7 +165,7 @@ export default function AboutPage() {
                     Master of Computer Science
                   </h3>
                   <p className="text-muted-foreground">
-                    Stanford University • 2017 - 2019
+                    Mock University • 2017 - 2019
                   </p>
                   <p className="mt-2 text-muted-foreground">
                     Specialized in Human-Computer Interaction and Software
